@@ -54,4 +54,6 @@ namedValues:
   - name: Instrumentation key's named value name (Logger-Credentials-... or the name you chose in Step #4)
     properties:
       value: your instrumentation key
+```
+
 8. In the Azure portal, delete your APIM instance logger from Step 1 and your ``Logger-Credentials-...`` named value if you overrode it in Step 4. They will get recreated with proper names when the publisher runs.
