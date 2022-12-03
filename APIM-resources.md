@@ -86,6 +86,16 @@ diagnostics:
       ...
 ```
 
+Each diagnostic is associated with a logger resource. When promoting across environments, make sure to override the ``loggerId`` property with the corresponding logger.
+```yaml
+diagnostics
+    - name: diagnosticName
+      properties:
+        loggerId: Resource ID of the associated logger. Format is "/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ApiManagement/service/serviceName/loggers/loggerName"  
+      ...
+```
+ 
+
 ### Gateway
 Gateways are extracted in ``artifacts/gateways/gatewayName/gatewayInformation.json``. You can override the JSON in configuration like this:
 ```yaml
@@ -105,7 +115,7 @@ gateways:
         - name: apiB
 ```
 
-APIs in configuration fully override APIs in ``apis.json``. In other words:
+Gateway APIs in configuration fully override APIs in ``apis.json``. In other words:
 
 | Configuration APIs | ``apis.json`` APIs | Current APIs in APIM | After publisher runs |
 |:--|:--|:--|:--|
