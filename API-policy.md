@@ -1,0 +1,2 @@
+# API policy
+API policies are extracted in ``artifacts/apis/apiName/policyName.xml``. As of this writing, all APIM policies are named ``policy``, so the path above is effectively ``artifacts/apis/apiName/policy.xml``.
