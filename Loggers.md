@@ -57,3 +57,20 @@ namedValues:
 ```
 
 8. In the Azure portal, delete your APIM instance logger from Step 1 and your ``Logger-Credentials-...`` named value if you overrode it in Step 4. They will get recreated with proper names when the publisher runs.
+
+## Event Hub loggers
+We recommend a code-first approach to create Event Hub loggers:
+1. Create a folder under ``loggers`` with a name for your logger (``artifacts/loggers/eventhub``, for instance). This logger name should be consistent across environments.
+2. Under your logger folder, create a ``loggerInformation.json`` file (``artifacts/loggers/eventhub/loggerInformation.json``). The file contents should look like this:
+```json
+{
+  "properties": {
+    "loggerType": "azureEventHub",
+    "description": "A description for your logger",
+    "credentials": {
+      "connectionString": "{{Named value for your event hub connection string}}"
+    }
+  }
+```
+3. Create a named value with your Event Hub connection string. The named value name should match your ``properties/credentials/connectionString`` value in your logger's ``loggerInformation.json``.
+4. Override the named value's value in each environment's configuration as needed.
