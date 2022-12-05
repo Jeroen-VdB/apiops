@@ -1,2 +1,0 @@
-# API operation policy
-API operation policies are extracted in ``artifacts/apis/apiName/operations/operationName/policyName.xml``. As of this writing, all APIM policies are named ``policy``, so the path above is effectively ``artifacts/apis/apiName/operations/operationName/policy.xml``.
