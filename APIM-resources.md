@@ -199,3 +199,31 @@ We recommend a code-first approach to create Event Hub loggers:
 ```
 3. Create a named value with your Event Hub connection string. The named value name should match your ``properties/credentials/connectionString`` value in your logger's ``loggerInformation.json``.
 4. Override the named value's value in each environment's configuration as needed.
+
+# Version set
+Version sets are extracted in ``artifacts/version sets/versionSetName/apiVersionSetInformation.json``. You can override the JSON in configuration like this:
+```yaml
+gateways:
+    - name: gatewayName
+      properties:
+      ...
+```
+
+To link a version set and an API, set the API's ``apiVersionSetId`` property to the version set's resource ID. 
+
+__artifacts/apis/apiName/apiInformation.json__
+```json
+{
+  "properties": {
+    "apiVersionSetId": "/subscriptions/subscriptionName/resourceGroups/resourceGroupName/providers/Microsoft.ApiManagement/service/apimServiceName/apiVersionSets/versionSetName"
+...
+}
+```
+
+You can also set it in configuration like this:
+```yaml
+apis:
+    - name: apiName
+      properties:
+        apiVersionSetId: /subscriptions/subscriptionName/resourceGroups/resourceGroupName/providers/Microsoft.ApiManagement/service/apimServiceName/apiVersionSets/versionSetName
+```
