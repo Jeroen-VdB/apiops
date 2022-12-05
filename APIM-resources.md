@@ -209,7 +209,7 @@ gateways:
       ...
 ```
 
-To link a version set and an API, set the API's ``apiVersionSetId`` property to the version set's resource ID. 
+To link a version set and an API, set the API's ``apiVersionSetId`` property to the version set's resource ID: 
 
 __artifacts/apis/apiName/apiInformation.json__
 ```json
