@@ -45,3 +45,17 @@ namedValues__0__properties__value: https://www.search2.com
   ]
 }
 ```
+
+# Configuration values
+
+| Value | Purpose | Extractor, publisher, or both | Sample values |
+| - | - | - | - |
+| ``CONFIGURATION_YAML_PATH`` | Absolute path for the configuration YAML file. | Both | ``C:\Temp\configuration.yaml``<br><br> ``/tmp/configuration/yml`` |
+| ``AZURE_CLOUD_ENVIRONMENT`` | Azure cloud where APIM is located. See [here](https://github.com/Azure/apiops/wiki/Connecting-to-different-Azure-clouds) for more details. | Both | ``AzureGlobalCloud``<br><br>``AzureUSGovernment`` |
+| ``AZURE_BEARER_TOKEN`` | JWT token for authenticating to Azure. | Both | ``eyJhbGciOiJIUzI1Ni...`` |
+| ``API_MANAGEMENT_SERVICE_OUTPUT_FOLDER_PATH`` | Absolute path of directory to store artifacts.<br>Extractor will output its artifacts here.<br>Publisher will push the artifacts here to APIM. | Both | ``/tmp/artifacts`` |
+| ``API_SPECIFICATION_FORMAT`` or ``apiSpecificationFormat`` | Default format for API specification files | Extractor | ``Wadl``<br><br>``OpenApiV3Yaml`` |
+| ``API_MANAGEMENT_SERVICE_NAME`` OR ``apimServiceName`` | Name of API management instance | Both | ``myapiminstance`` |
+| ``AZURE_SUBSCRIPTION_ID`` | Subscription ID where APIM instance is located | Both | ``a85e4e0d-a203-40fd-9a3d-f7cfb3ed2b91`` |
+| ``AZURE_RESOURCE_GROUP_NAME`` | Resource group where APIM instance is located | Both | ``apim-rg`` |
+| ``COMMIT_ID`` | If specified, publisher will only publish changes that occurred in this commit. | Publisher | ``ca82a6dff817ec66f44342007202690a93763949`` |
