@@ -2,6 +2,8 @@ The extractor and publisher use the [.NET logging API](https://learn.microsoft.c
 
 ![image](https://user-images.githubusercontent.com/31325620/214876645-edfbb325-01a3-4f6b-a795-fc37fef749d4.png)
 
+You can also do this in Github by setting a variable as demonstrated [here](https://docs.github.com/en/actions/learn-github-actions/variables).
+
 
 ### Debug
 - Shows the URLs used in each API call. For instance, `Beginning request to put REST resource URI https://management.azure.com/subscriptions/***/resourceGroups/***/providers/Microsoft.ApiManagement/service/$(APIM_NAME)/namedValues/mynamedvalue?api-version=2021-12-01-preview...`
