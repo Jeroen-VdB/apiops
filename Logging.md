@@ -2,7 +2,7 @@ The extractor and publisher use the [.NET logging API](https://learn.microsoft.c
 
 ![image](https://user-images.githubusercontent.com/31325620/214876645-edfbb325-01a3-4f6b-a795-fc37fef749d4.png)
 
-You can also do this in Github by setting a variable as demonstrated [here](https://docs.github.com/en/actions/learn-github-actions/variables).
+You can also do this in Github by setting a variable named `LOG_LEVEL` for the appropriate environment as demonstrated [here](https://docs.github.com/en/actions/learn-github-actions/variables).
 
 
 ### Debug
