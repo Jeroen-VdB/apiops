@@ -51,6 +51,19 @@ apis:
 
 > **NOTE:** It's possible to create a ``specification.xxx`` file that conflicts with the API's ``apiInformation.json``. We don't attempt to resolve any conflicts; rather, we pass both and let APIM handle it.
 
+> **NOTE:** There's a ~4MB [limit](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#subscription-limits) on API requests to the Azure Resource Manager.
+![image](https://github.com/Azure/apiops/assets/31325620/7d242986-f2ad-407c-ae8f-570351e97b2a).
+
+The recommendation is to upload the specification file somewhere (e.g. Azure Blob Storage) and have APIM import from that URL (like [this](https://learn.microsoft.com/en-us/rest/api/apimanagement/current-ga/apis/create-or-update?tabs=HTTP#apimanagementcreateapiusingoai3import)). Here is how you can achieve that in your publisher configuration YAML like this:
+```yaml
+apis:
+  - name: myapi
+    properties:
+      format: openapi-link
+      value: https://link-to-your-large-file
+```
+ 
+
 # API tag
 API tags are extracted in ``artifacts/apis/apiName/tags.json``. You can override this in configuration like this:
 ```yaml
