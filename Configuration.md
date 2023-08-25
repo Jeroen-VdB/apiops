@@ -59,3 +59,7 @@ namedValues__0__properties__value: https://www.search2.com
 | ``AZURE_SUBSCRIPTION_ID`` | Subscription ID where APIM instance is located | Both | ``a85e4e0d-a203-40fd-9a3d-f7cfb3ed2b91`` |
 | ``AZURE_RESOURCE_GROUP_NAME`` | Resource group where APIM instance is located | Both | ``apim-rg`` |
 | ``COMMIT_ID`` | If specified, publisher will only publish changes that occurred in this commit. | Publisher | ``ca82a6dff817ec66f44342007202690a93763949`` |
+
+# Can ApiOps override resource names using the configuration.[env].yaml file?
+
+There's a distinction between resource names and resource properties. Resources are things like APIs, backends, named values, loggers, etc. Their names should be consistent across environments. Their properties however can be overridden across environments through configuration. e.g. a named value is a resource. Its name should be consistent across environments (fun01-key, for instance). Its value (properties.value) is a property that can be overridden. Note that APIM sometimes relies on the display name property (properties.displayName) of a resource rather than just its name. Named values used in policies fall in that category, for instance. In those cases, we would recommend keeping both name and properties.displayName consistent across environments.
