@@ -214,7 +214,7 @@ We recommend a code-first approach to create Event Hub loggers:
 4. Override the named value's value in each environment's configuration as needed.
 
 # Version set
-Version sets are extracted in ``artifacts/version sets/versionSetName/apiVersionSetInformation.json``. You can override the JSON in configuration like this:
+Version sets are extracted in ``artifacts/version sets/versionSetName/versionSetInformation.json``. You can override the JSON in configuration like this:
 ```yaml
 gateways:
     - name: gatewayName
